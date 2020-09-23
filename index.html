@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #graph{
+            background-color: red;
+        }
+
+        .popup {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(231, 96, 18);
+            /* display: none; */
+        }
+
+        .visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>    
+    <form name="search">
+        <input type="text" name="key" placeholder="Введите имя" class="inputname"></input>
+        <input type="button" name="send" value="Добавить" class="sub"/>
+    </form>
+    <canvas id="graph" width="200" height="200"></canvas>
+        <script>
+            var canvas = document.getElementById('graph');
+            var ctx = canvas.getContext('2d');
+            let button = document.querySelector('.sub');
+            button.addEventListener('click', showPopup);
+            function showPopup() {
+                document.querySelector('.inputname').classList.add('inputname');
+                console.log('showPopup работает');
+            }
+        </script>
+</body>
+</html>
